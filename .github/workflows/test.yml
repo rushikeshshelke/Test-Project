@@ -1,0 +1,22 @@
+name: Reusable workflow user
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+  workflow_dispatch:
+
+jobs:
+  do-it:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Run one line script Reusable workflow user
+        run: echo This is resuable workflow user
+  
+
+  run-resuable-flow:
+    uses: rushikeshshelke/ReusableWorkflow/.github/workflows/welcomeFlow.yml@main
