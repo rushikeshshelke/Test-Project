@@ -42,5 +42,5 @@ jobs:
   run-resuable-flow:
     uses: rushikeshshelke/ReusableWorkflow/.github/workflows/welcomeFlow.yml@main
     with:
-      VERSION: outputs.output1
+      VERSION: ${{ outputs.output1 }}
       TENANT: Rushikesh
