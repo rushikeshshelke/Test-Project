@@ -33,6 +33,6 @@ jobs:
 
   run-resuable-flow:
     uses: rushikeshshelke/ReusableWorkflow/.github/workflows/welcomeFlow.yml@main
-    with:
-      VERSION: ${{ env.VERSION }}
-      TENANT: ${{ env.TENANT }}
+      with:
+        VERSION: 1.2.3.4
+        TENANT: Rushikesh
