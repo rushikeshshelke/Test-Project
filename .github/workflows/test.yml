@@ -8,6 +8,11 @@ on:
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
+    inputs:
+      VERSION:
+        required: true
+        default: 1.4.5
+        type: string
 
 env:
   VERSION: 1.2.3
@@ -34,5 +39,5 @@ jobs:
   run-resuable-flow:
     uses: rushikeshshelke/ReusableWorkflow/.github/workflows/welcomeFlow.yml@main
     with:
-      VERSION: "${{ env.VERSION }}"
+      VERSION: "${{ inputs.VERSION }}"
       TENANT: Rushikesh
