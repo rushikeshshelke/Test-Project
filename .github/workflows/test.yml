@@ -21,7 +21,8 @@ env:
 jobs:
   do-it:
     runs-on: ubuntu-latest
-
+    outputs:
+      output1: ${{ steps.step1.outputs.test }}
     steps:
       - uses: actions/checkout@v2
 
@@ -35,9 +36,11 @@ jobs:
         run: |
           echo "Test-Project: ${{ env.VERSION }}"
           echo "Test-Project: ${{ env.TENANT }}"
+      - id: step1
+        run: echo "::set-output name=test::${{ env.VERSION }}"
 
   run-resuable-flow:
     uses: rushikeshshelke/ReusableWorkflow/.github/workflows/welcomeFlow.yml@main
     with:
-      VERSION: "${{ inputs.VERSION }}"
+      VERSION: outputs.output1
       TENANT: Rushikesh
