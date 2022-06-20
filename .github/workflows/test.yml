@@ -19,7 +19,7 @@ env:
   TENANT: Rushikesh
 
 jobs:
-  do-it:
+  doit:
     runs-on: ubuntu-latest
     outputs:
       output1: ${{ steps.step1.outputs.test }}
@@ -40,7 +40,8 @@ jobs:
         run: echo "::set-output name=test::${{ env.VERSION }}"
 
   run-resuable-flow:
+    needs: doit
     uses: rushikeshshelke/ReusableWorkflow/.github/workflows/welcomeFlow.yml@main
     with:
-      VERSION: ${{ outputs.output1 }}
+      VERSION: ${{ needs.doit.outputs.output1 }}
       TENANT: Rushikesh
