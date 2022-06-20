@@ -35,4 +35,4 @@ jobs:
     uses: rushikeshshelke/ReusableWorkflow/.github/workflows/welcomeFlow.yml@main
     with:
       VERSION: ${{ env.VERSION }}
-      TENANT: ${{  env.TENANT }}
+      TENANT: ${{ env.TENANT }}
