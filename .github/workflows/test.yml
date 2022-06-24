@@ -6,11 +6,10 @@ on:
     inputs:
       VERSION:
         required: true
-        default: 1.4.5
         type: string
 
 env:
-  VERSION: 1.2.3
+  VERSION: ${{ inputs.VERSION }}
   TENANT: Rushikesh
 
 jobs:
