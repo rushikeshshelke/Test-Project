@@ -38,6 +38,8 @@ jobs:
           echo "Test-Project: ${{ env.TENANT }}"
       - id: step1
         run: echo "::set-output name=test::${{ env.VERSION }}"
+      - name: run external sh file
+        run : ./scripts/test.sh
 
   run-resuable-flow:
     needs: doit
