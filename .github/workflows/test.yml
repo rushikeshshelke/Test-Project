@@ -39,7 +39,7 @@ jobs:
       - id: step1
         run: echo "::set-output name=test::${{ env.VERSION }}"
       - name: run external sh file
-        run : ./scripts/test.sh
+        run : git update-index --chmod=+x ./scripts/test.sh
 
   run-resuable-flow:
     needs: doit
